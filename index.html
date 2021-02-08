@@ -1,0 +1,53 @@
+---
+layout: default
+title: Latest COVID data
+---
+
+<p class="measure">Data on a per country data from the M-Media Group API. More features to follow.</p>
+
+{% assign cases_data = site.data.cases %}
+
+<p>Number of countries: <strong>{{ cases_data.size }}</strong></p>
+
+<table class="pure-table">
+
+	<thead>
+
+		<tr>
+
+			<th>Country</th>
+			<th>Deaths</th>
+			<th>Population</th>
+
+		</tr>
+
+	</thead>
+
+	<tbody>
+
+	{% for entry in cases_data %}
+
+		<tr>
+
+			{% assign split_whole_country_array = entry | split: "{" %}
+
+			<td>{{ split_whole_country_array.first | remove: "[" | remove: "," | remove: '"' }}</td>
+
+			{% for item in entry %}
+
+			<td>{{ item.All.deaths }}</td>
+			<td>{{ item.All.population }}</td>
+
+			{% endfor %}
+
+		</tr>
+
+	{% endfor %}
+
+	</tbody>
+
+</table>
+
+
+
+
