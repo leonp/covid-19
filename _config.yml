@@ -67,6 +67,9 @@ jekyll_get_json:
   - data: cases
     json: 'https://covid-api.mmediagroup.fr/v1/cases'
     cache: true
+  - data: wm
+    json: 'https://webmention.io/api/mentions?token=OXK_ckbT6Mfi3blN_i0V5w'
+    cache: true
 
 
 # Exclude from processing.

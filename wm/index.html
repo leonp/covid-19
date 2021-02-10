@@ -1,0 +1,16 @@
+---
+layout: default
+title: Webmentions
+---
+
+{% assign webmentions = site.data.wm.links %}
+
+<ul>
+
+	{% for webmention in webmentions %}
+
+	<li>{{ webmention.source }}</li>
+
+	{% endfor %}
+
+</ul>
